@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import diceGameRoutes from "./src/routes/diceGameRoutes.js";
 import { errorMiddleware } from "./src/middleware/errorMiddleware.js";
-import session from "express-session";
+import { sessionMiddleware } from "./src/config/session.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,21 +16,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-
-    resave: false,
-    saveUninitialized: false,
-
-    cookie: {
-      httpOnly: true,
-      secure: false, // localhost
-      sameSite: "strict",
-      maxAge: 1000 * 60 * 60 * 24,
-    },
-  }),
-);
+app.use(sessionMiddleware);
 
 app.use("/api", diceGameRoutes);
 
