@@ -1,11 +1,12 @@
 import { AppError } from "../errors/AppError.js";
+import * as heroRepository from "../repositories/heroRepository.js";
 
 /** @param {number} power attack or defense stat (roll range 1..power inclusive) */
 function rollPower(power) {
   return Math.floor(Math.random() * power) + 1;
 }
 
-export function createDiceGameEngine(heroes) {
+export function createDiceGameEngine() {
   //engine state variables
   let playerHero = null;
   let computerHero = null;
@@ -13,17 +14,20 @@ export function createDiceGameEngine(heroes) {
   let computerHp = 0;
 
   const getHeroes = () => {
-    return heroes;
+    return heroRepository.getAllHeroes();
   };
 
   const getHeroById = (heroId) => {
-    const id = Number(heroId);
-    return heroes.find((hero) => hero.id === id) || null;
+    return heroRepository.getHeroById(heroId);
   };
 
   const chooseComputerHero = (playerHeroId) => {
-    const pool = heroes.filter((hero) => hero.id !== Number(playerHeroId));
-    if (pool.length === 0) return null;
+    const pool = heroRepository.getAvailableOpponents(playerHeroId);
+
+    if (pool.length === 0) {
+      return null;
+    }
+
     return pool[Math.floor(Math.random() * pool.length)];
   };
 
