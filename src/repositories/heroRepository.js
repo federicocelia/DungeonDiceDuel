@@ -1,15 +1,25 @@
-import { heroes } from "../data/heroes.js";
+import { prisma } from "../database/prisma.js";
 
-export function getAllHeroes() {
-  return heroes;
+export async function getAllHeroes() {
+  return prisma.hero.findMany();
 }
 
-export function getHeroById(heroId) {
+export async function getHeroById(heroId) {
   const id = Number(heroId);
 
-  return heroes.find((hero) => hero.id === id) || null;
+  return prisma.hero.findUnique({
+    where: {
+      id: Number(heroId),
+    },
+  });
 }
 
-export function getAvailableOpponents(playerHeroId) {
-  return heroes.filter((hero) => hero.id !== Number(playerHeroId));
+export async function getAvailableOpponents(playerHeroId) {
+  return prisma.hero.findMany({
+    where: {
+      NOT: {
+        id: Number(playerHeroId),
+      },
+    },
+  });
 }

@@ -1,7 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../src/database/prisma.js";
 import { heroes } from "../src/data/heroes.js";
-
-const prisma = new PrismaClient();
 
 async function main() {
   for (const hero of heroes) {

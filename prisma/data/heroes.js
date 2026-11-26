@@ -25,7 +25,7 @@ export const heroes = [
     defensePower: 6,
     maxHp: 18,
     imageUrl:
-      "https://images.unsplash.com/photo-1577493340887-b7bfff550145?auto=format&fit=crop&crop=top&w=500&h=400&q=80"
+      "https://images.unsplash.com/photo-1577493340887-b7bfff550145?auto=format&fit=crop&crop=top&w=500&h=400&q=80",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const heroes = [
     defensePower: 4,
     maxHp: 14,
     imageUrl:
-      "https://images.unsplash.com/photo-1643345633742-7af1bd1226af?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1643345633742-7af1bd1226af?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ export const heroes = [
     defensePower: 6,
     maxHp: 12,
     imageUrl:
-      "https://images.unsplash.com/photo-1561084746-f360502e5abe?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1561084746-f360502e5abe?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export const heroes = [
     defensePower: 8,
     maxHp: 20,
     imageUrl:
-      "https://images.unsplash.com/photo-1770610973306-a09b57e6dc52?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1770610973306-a09b57e6dc52?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ export const heroes = [
     defensePower: 7,
     maxHp: 16,
     imageUrl:
-      "https://images.unsplash.com/photo-1542605731-cf0169ad50e3?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1542605731-cf0169ad50e3?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ export const heroes = [
     defensePower: 5,
     maxHp: 15,
     imageUrl:
-      "https://images.unsplash.com/photo-1725158214576-a908b2a0346a?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1725158214576-a908b2a0346a?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 7,
@@ -79,7 +79,7 @@ export const heroes = [
     defensePower: 5,
     maxHp: 16,
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1667608386999-bc20b98ef329?auto=format&fit=crop&w=500&q=80"
+      "https://plus.unsplash.com/premium_photo-1667608386999-bc20b98ef329?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const heroes = [
     defensePower: 9,
     maxHp: 17,
     imageUrl:
-      "https://images.unsplash.com/photo-1696825612755-7ba581bb4f39?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1696825612755-7ba581bb4f39?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 9,
@@ -97,7 +97,7 @@ export const heroes = [
     defensePower: 4,
     maxHp: 13,
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1696528052089-fd6dabc34972?auto=format&fit=crop&w=500&q=80"
+      "https://plus.unsplash.com/premium_photo-1696528052089-fd6dabc34972?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 10,
@@ -106,7 +106,7 @@ export const heroes = [
     defensePower: 10,
     maxHp: 22,
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1694444269425-897fa3a0e3fa?auto=format&fit=crop&w=500&q=80"
+      "https://plus.unsplash.com/premium_photo-1694444269425-897fa3a0e3fa?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 11,
@@ -115,7 +115,7 @@ export const heroes = [
     defensePower: 7,
     maxHp: 14,
     imageUrl:
-      "https://images.unsplash.com/photo-1573306533578-12e23afbf2c6?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1573306533578-12e23afbf2c6?auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 12,
@@ -124,6 +124,6 @@ export const heroes = [
     defensePower: 8,
     maxHp: 18,
     imageUrl:
-      "https://images.unsplash.com/photo-1483879504681-c0196ecceda5?auto=format&fit=crop&w=500&q=80"
-  }
+      "https://images.unsplash.com/photo-1483879504681-c0196ecceda5?auto=format&fit=crop&w=500&q=80",
+  },
 ];

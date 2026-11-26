@@ -13,16 +13,16 @@ export function createDiceGameEngine() {
   let playerHp = 0;
   let computerHp = 0;
 
-  const getHeroes = () => {
+  const getHeroes = async () => {
     return heroRepository.getAllHeroes();
   };
 
-  const getHeroById = (heroId) => {
+  const getHeroById = async (heroId) => {
     return heroRepository.getHeroById(heroId);
   };
 
-  const chooseComputerHero = (playerHeroId) => {
-    const pool = heroRepository.getAvailableOpponents(playerHeroId);
+  const chooseComputerHero = async (playerHeroId) => {
+    const pool = await heroRepository.getAvailableOpponents(playerHeroId);
 
     if (pool.length === 0) {
       return null;
@@ -31,13 +31,13 @@ export function createDiceGameEngine() {
     return pool[Math.floor(Math.random() * pool.length)];
   };
 
-  const startBattle = (playerHeroId) => {
-    playerHero = getHeroById(playerHeroId);
+  const startBattle = async (playerHeroId) => {
+    playerHero = await getHeroById(playerHeroId);
     if (!playerHero) {
       throw new AppError("Hero not found", 404);
     }
 
-    computerHero = chooseComputerHero(playerHero.id);
+    computerHero = await chooseComputerHero(playerHero.id);
     if (!computerHero) {
       throw new AppError("Unable to find an opponent.", 404);
     }

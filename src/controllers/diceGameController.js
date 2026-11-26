@@ -1,7 +1,6 @@
-import { heroes } from "../data/heroes.js";
 import { createDiceGameEngine } from "../domain/diceGameEngine.js";
 
-const engine = createDiceGameEngine(heroes);
+const engine = createDiceGameEngine();
 
 const {
   getHeroes,
@@ -12,19 +11,19 @@ const {
   resetBattle,
 } = engine;
 
-export function getHeroesController(req, res, next) {
+export async function getHeroesController(req, res, next) {
   try {
     res.json({
-      heroes: getHeroes(),
+      heroes: await getHeroes(),
     });
   } catch (error) {
     next(error);
   }
 }
 
-export function startBattleController(req, res, next) {
+export async function startBattleController(req, res, next) {
   try {
-    const result = startBattle(req.body.heroId);
+    const result = await startBattle(req.body.heroId);
     res.json(result);
   } catch (error) {
     next(error);
