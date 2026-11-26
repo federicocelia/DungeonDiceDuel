@@ -1,0 +1,11 @@
+-- CreateTable
+CREATE TABLE "Run" (
+    "id" SERIAL NOT NULL,
+    "userId" INTEGER NOT NULL,
+    "totalBattles" INTEGER NOT NULL DEFAULT 0,
+    "wins" INTEGER NOT NULL DEFAULT 0,
+    "losses" INTEGER NOT NULL DEFAULT 0,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Run_pkey" PRIMARY KEY ("id")
+);
