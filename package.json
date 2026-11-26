@@ -2,15 +2,26 @@
   "name": "dungeon-dice-game",
   "version": "1.0.0",
   "description": "dungeon-dice-game",
+  "homepage": "https://github.com/federicocelia/DungeonDiceDuel#readme",
+  "bugs": {
+    "url": "https://github.com/federicocelia/DungeonDiceDuel/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/federicocelia/DungeonDiceDuel.git"
+  },
   "license": "ISC",
+  "private": true,
   "author": "Jonathan Hill",
   "type": "module",
   "main": "server.js",
   "scripts": {
+    "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-
-  }
+    "express": "^5.3.0"
+  },
+  "devDependencies": {}
 }
