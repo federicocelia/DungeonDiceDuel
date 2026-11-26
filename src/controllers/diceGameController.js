@@ -13,22 +13,38 @@ const {
 } = engine;
 
 export function getHeroesController(req, res) {
-  res.json({
-    heroes: getHeroes(),
-  });
+  try {
+    res.json({
+      heroes: getHeroes(),
+    });
+  } catch (error) {
+    next(error);
+  }
 }
 
 export function startBattleController(req, res) {
-  const result = startBattle(req.body.heroId);
-  res.json(result);
+  try {
+    const result = startBattle(req.body.heroId);
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
 }
 
 export function roundBattleController(req, res) {
-  const result = playRound();
-  res.json(result);
+  try {
+    const result = playRound();
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
 }
 
 export function resetBattleController(req, res) {
-  resetBattle();
-  res.status(200).json({ message: "Battle reset." });
+  try {
+    resetBattle();
+    res.status(200).json({ message: "Battle reset." });
+  } catch (error) {
+    next(error);
+  }
 }

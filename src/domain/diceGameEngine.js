@@ -1,4 +1,4 @@
-import { heroes } from "../data/heroes.js";
+import { AppError } from "../errors/AppError.js";
 
 /** @param {number} power attack or defense stat (roll range 1..power inclusive) */
 function rollPower(power) {
@@ -30,12 +30,12 @@ export function createDiceGameEngine(heroes) {
   const startBattle = (playerHeroId) => {
     playerHero = getHeroById(playerHeroId);
     if (!playerHero) {
-      return { error: "Hero not found." };
+      throw new AppError("Hero not found", 404);
     }
 
     computerHero = chooseComputerHero(playerHero.id);
     if (!computerHero) {
-      return { error: "No available opponent." };
+      throw new AppError("Unable to find an opponent.", 404);
     }
 
     playerHp = playerHero.maxHp;
@@ -46,11 +46,11 @@ export function createDiceGameEngine(heroes) {
 
   const playRound = () => {
     if (!playerHero || !computerHero) {
-      return { error: "Battle has not started." };
+      throw new AppError("Battle has not started.", 400);
     }
 
     if (playerHp === 0 || computerHp === 0) {
-      return { error: "Battle is already over." };
+      throw new AppError("Battle already finished.", 400);
     }
 
     const playerAttackRoll = rollPower(playerHero.attackPower);

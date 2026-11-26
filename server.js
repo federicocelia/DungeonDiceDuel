@@ -3,6 +3,7 @@ import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import diceGameRoutes from "./src/routes/diceGameRoutes.js";
+import { errorMiddleware } from "./src/middleware/errorMiddleware.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +16,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", diceGameRoutes);
+
+app.use(errorMiddleware);
 
 const server = http.createServer(app);
 
