@@ -3,13 +3,32 @@ import { createDiceGameEngine } from "../domain/diceGameEngine.js";
 
 const engine = createDiceGameEngine(heroes);
 
-export function getHeroes(req, res) {
+const {
+  getHeroes,
+  getHeroById,
+  chooseComputerHero,
+  startBattle,
+  playRound,
+  resetBattle,
+} = engine;
+
+export function getHeroesController(req, res) {
   res.json({
-    heroes: engine.getHeroes(),
+    heroes: getHeroes(),
   });
 }
 
-export function startBattle(req, res) {
-  const result = engine.startBattle(req.body.heroId);
+export function startBattleController(req, res) {
+  const result = startBattle(req.body.heroId);
   res.json(result);
+}
+
+export function roundBattleController(req, res) {
+  const result = playRound();
+  res.json(result);
+}
+
+export function resetBattleController(req, res) {
+  resetBattle();
+  res.status(200).json({ message: "Battle reset." });
 }
