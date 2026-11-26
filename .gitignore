@@ -51,3 +51,20 @@ temp/
 
 # ESLint cache
 .eslintcache
+/src/generated/prisma
+
+
+# Prisma AI skills
+.agents/
+.claude/
+.cursor/
+.devin/
+.windsurf/
+
+skills-lock.json
+
+# Generated Prisma client
+src/generated/
+
+# Environment variables
+.env
