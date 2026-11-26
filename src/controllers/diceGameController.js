@@ -12,7 +12,7 @@ const {
   resetBattle,
 } = engine;
 
-export function getHeroesController(req, res) {
+export function getHeroesController(req, res, next) {
   try {
     res.json({
       heroes: getHeroes(),
@@ -22,7 +22,7 @@ export function getHeroesController(req, res) {
   }
 }
 
-export function startBattleController(req, res) {
+export function startBattleController(req, res, next) {
   try {
     const result = startBattle(req.body.heroId);
     res.json(result);
@@ -31,7 +31,7 @@ export function startBattleController(req, res) {
   }
 }
 
-export function roundBattleController(req, res) {
+export function roundBattleController(req, res, next) {
   try {
     const result = playRound();
     res.json(result);
@@ -40,7 +40,7 @@ export function roundBattleController(req, res) {
   }
 }
 
-export function resetBattleController(req, res) {
+export function resetBattleController(req, res, next) {
   try {
     resetBattle();
     res.status(200).json({ message: "Battle reset." });
