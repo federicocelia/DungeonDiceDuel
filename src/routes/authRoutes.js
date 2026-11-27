@@ -3,12 +3,12 @@ import {
   loginController,
   logoutController,
   registerController,
-} from "../controllers/authController";
+} from "../controllers/authController.js";
 
 const router = Router();
 
 router.post("/register", registerController);
 router.post("/login", loginController);
-router.post("logout", logoutController);
+router.post("/logout", logoutController);
 
 export default router;

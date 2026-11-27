@@ -2,8 +2,9 @@ import express from "express";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import diceGameRoutes from "./src/routes/diceGameRoutes.js";
-import authRoutes from "./src/routes/authRoutes.js";
+import diceGameRouter from "./src/routes/diceGameRoutes.js";
+import authRouter from "./src/routes/authRoutes.js";
+import meRouter from "./src/routes/meRoutes.js";
 import { errorMiddleware } from "./src/middleware/errorMiddleware.js";
 import { sessionMiddleware } from "./src/config/session.js";
 
@@ -19,8 +20,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(sessionMiddleware);
 
-app.use("/api", diceGameRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api", diceGameRouter);
+app.use("/api/auth/me", meRouter);
+app.use("/api/auth", authRouter);
 
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));

@@ -24,9 +24,9 @@ export async function getHeroesController(req, res, next) {
 
 export async function startBattleController(req, res, next) {
   try {
-    req.session.userId = 1;
+    const userId = req.session.userId ?? 1;
 
-    const run = await runService.createRunForUser(req.session.userId);
+    const run = await runService.createRunForUser(userId);
 
     req.session.runId = run.id;
 
